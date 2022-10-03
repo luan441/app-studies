@@ -1,4 +1,3 @@
-import React from "react";
 import style from './list.module.scss'
 
 export default function List() {
