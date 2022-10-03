@@ -5,26 +5,26 @@ export default function Form() {
   return (
     <form>
       <div>
-        <label htmlFor="tarefa">
+        <label htmlFor="task">
           Adicione um novo estudo
         </label>
         <input
           type="text"
-          name="tarefa"
-          id="tarefa"
+          name="task"
+          id="task"
           placeholder="O que você quer estudar"
           required
         />
       </div>
       <div>
-        <label htmlFor="tempo">
+        <label htmlFor="time">
           Tempo
         </label>
         <input
           type="time"
           step="1"
-          name="tempo"
-          id="tempo"
+          name="time"
+          id="time"
           min="00:00:00"
           max="01:30:00"
           required
