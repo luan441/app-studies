@@ -1,6 +1,6 @@
 import Form from '../components/Form';
 import List from '../components/List';
-import style from './app.module.scss'
+import style from './app.module.scss';
 
 function App() {
   return (

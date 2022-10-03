@@ -1,4 +1,5 @@
-import style from './list.module.scss'
+import Item from './Item';
+import style from './list.module.scss';
 
 export default function List() {
   const task = [{
@@ -12,11 +13,11 @@ export default function List() {
     <aside className={style.listTask}>
       <h2>Estudo do dia</h2>
       <ul>
-        {task.map((task, index) => (
-          <li key={index} className={style.item}>
-            <h3>{task.task}</h3>
-            <span>{task.time}</span>
-          </li>
+        {task.map((item, index) => (
+          <Item
+            key={index}
+            {...item}
+          />
         ))}
       </ul>
     </aside>

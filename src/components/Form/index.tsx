@@ -1,5 +1,5 @@
 import Button from "../Button";
-import style from "./form.module.scss"
+import style from "./form.module.scss";
 
 export default function Form() {
   return (
