@@ -1,13 +1,16 @@
 import Button from "../Button";
 import style from "./form.module.scss";
 import { useState } from "react";
+import ITask from "../../types/ITask";
 
-export default function Form() {
+export default function Form({ setTasks }: IFormProps) {
   const [task, setTask] = useState<ITask>({task: '', time: '00:00:00'});
+
   const addTask = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('submit', task);
+    setTasks((oldTasks) => [...oldTasks, task]);
   };
+
   return (
     <form className={style.newTask} onSubmit={(event) => addTask(event)}>
       <div className={style.inputContainer}>
@@ -47,7 +50,6 @@ export default function Form() {
   )
 }
 
-interface ITask {
-  task: string,
-  time: string
+interface IFormProps {
+  setTasks: React.Dispatch<React.SetStateAction<ITask[]>>
 }
