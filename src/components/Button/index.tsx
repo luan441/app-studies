@@ -1,13 +1,15 @@
 import style from './button.module.scss';
 
 export default function Button(prop: ButtonProps) {
+  const { type = 'button' } = prop
   return (
-    <button className={style.button}>
+    <button type={type} className={style.button}>
       {prop.children}
     </button>
   )
 }
 
 interface ButtonProps {
-  children: string
+  children: string,
+  type?: 'button' | 'submit' | 'reset' | undefined
 }
