@@ -5,7 +5,7 @@ import Timer from '../components/Timer';
 import ITask from '../types/ITask';
 import style from './app.module.scss';
 
-function App() {
+export default function App() {
   const [tasks, setTasks] = useState<ITask[]>([]);
   const [selected, setSelected] = useState<ITask>();
 
@@ -24,9 +24,8 @@ function App() {
         tasks={tasks}
         selectedTask={selectedTask}
       />
-      <Timer />
+      <Timer taskSelected={selected} />
     </div>
   );
 }
 
-export default App;
