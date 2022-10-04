@@ -2,14 +2,22 @@ import Button from "../Button";
 import style from "./form.module.scss";
 import { useState } from "react";
 import ITask from "../../types/ITask";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Form({ setTasks }: IFormProps) {
-  const [task, setTask] = useState<ITask>({task: '', time: '00:00:00'});
+  const taskBlank: ITask = {task: '', time: '00:00:00', completed: false, selected: false, id: ''}
+  const [task, setTask] = useState<ITask>(taskBlank);
 
   const addTask = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setTasks((oldTasks) => [...oldTasks, task]);
-    setTask({task: '', time: '00:00:00'});
+    setTasks((oldTasks) => [
+      ...oldTasks,
+      {
+        ...task,
+        id: uuidv4()
+      }
+    ]);
+    setTask(taskBlank);
   };
 
   return (
