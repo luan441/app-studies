@@ -3,7 +3,7 @@ import style from "./form.module.scss";
 import { useState } from "react";
 
 export default function Form() {
-  const [task, setTask] = useState<Task>({task: '', time: '00:00:00'});
+  const [task, setTask] = useState<ITask>({task: '', time: '00:00:00'});
   const addTask = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log('submit', task);
@@ -47,7 +47,7 @@ export default function Form() {
   )
 }
 
-interface Task {
+interface ITask {
   task: string,
   time: string
 }
