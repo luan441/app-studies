@@ -9,6 +9,7 @@ export default function Form({ setTasks }: IFormProps) {
   const addTask = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setTasks((oldTasks) => [...oldTasks, task]);
+    setTask({task: '', time: '00:00:00'});
   };
 
   return (
