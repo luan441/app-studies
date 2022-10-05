@@ -22,9 +22,10 @@ export default function Form({ setTasks }: IFormProps) {
 
   return (
     <form className={style.newTask} onSubmit={(event) => addTask(event)}>
+      <h1>Adicionar Estudo</h1>
       <div className={style.inputContainer}>
         <label htmlFor="task">
-          Adicione um novo estudo
+          Tarefa
         </label>
         <input
           type="text"
@@ -32,7 +33,6 @@ export default function Form({ setTasks }: IFormProps) {
           id="task"
           value={task.task}
           onChange={(event) => setTask({...task, task: event.target.value})}
-          placeholder="O que você quer estudar"
           required
         />
       </div>
