@@ -17,6 +17,22 @@ export default function App() {
     })));
   }
 
+  const completedTask = () => {
+    if (selected) {
+      setTasks((oldTasks) => oldTasks.map((task) => {
+        if (selected.id === task.id) {
+          return {
+            ...task,
+            selected: false,
+            completed: true
+          };
+        }
+
+        return task;
+      }))
+    }
+  }
+
   return (
     <div className={style.AppStyle}>
       <Form setTasks={setTasks} />
@@ -24,7 +40,10 @@ export default function App() {
         tasks={tasks}
         selectedTask={selectedTask}
       />
-      <Timer taskSelected={selected} />
+      <Timer
+        taskSelected={selected}
+        completedTask={completedTask}
+      />
     </div>
   );
 }
